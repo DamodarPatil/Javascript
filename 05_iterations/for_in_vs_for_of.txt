@@ -1,0 +1,75 @@
+
+Difference between for...in and for...of loop in JavaScript
+
+for...in Loop
+- Purpose: Iterates over the enumerable properties of an object.
+- Use Case: When you need to loop through the keys (property names) of an object.
+
+Example:
+```
+const person = {
+    name: 'Devansh',
+    age: 22,
+    city: 'Ahmedabad'
+};
+
+for (let key in person) {
+    console.log(key);        // Output: name, age, city
+    console.log(person[key]); // Output: Devansh, 22, Ahmedabad
+}
+```
+
+for...of Loop
+- Purpose: Iterates over the values of an iterable object (like arrays, strings, maps, sets, etc.).
+- Use Case: When you need to loop through the values of an iterable.
+
+Example:
+```
+const fruits = ['apple', 'banana', 'mango'];
+
+for (let fruit of fruits) {
+    console.log(fruit); // Output: apple, banana, mango
+}
+```
+
+
+Key Differences:
+1. Type of Iterable:
+   - for...in is used for objects (to get keys).
+   - for...of is used for arrays, strings, and other iterable objects (to get values).
+
+2. Output:
+   - for...in outputs the keys (property names) of the object.
+   - for...of outputs the values of the iterable.
+
+3. Use Case:
+   - Use for...in when you need to work with objects.
+   - Use for...of when you need to work with arrays, strings, or any other iterable.
+
+More Examples:
+
+for...in with Arrays (not recommended):
+```
+const fruits = ['apple', 'banana', 'mango'];
+
+for (let index in fruits) {
+    console.log(index);       // Output: 0, 1, 2 (indices of the array)
+    console.log(fruits[index]); // Output: apple, banana, mango
+}
+```
+Even though it works, using for...in with arrays is not recommended because it iterates over all enumerable properties, including inherited properties.
+
+for...of with Strings:
+```
+const greeting = 'hello';
+
+for (let char of greeting) {
+    console.log(char); // Output: h, e, l, l, o
+}
+```
+
+Summary:
+- Use for...in to iterate over object properties.
+- Use for...of to iterate over iterable values like arrays and strings.
+
+Understanding these differences will help you choose the right loop for the task at hand.
