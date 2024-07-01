@@ -42,6 +42,3 @@ const data = [1,2,3,4,5,6,7,8,9,10];
 const dataTotal = data.reduce((acc, pri) => acc + pri, 0);
 console.log(dataTotal);
 
-
-
-
