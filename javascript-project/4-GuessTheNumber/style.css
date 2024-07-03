@@ -127,3 +127,24 @@ input[type="submit"]:hover {
   font-size: 18px;
   font-weight: bold;
 }
+
+.button {
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 32px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the link a block element */
+  font-size: 16px; /* Increase font size */
+  margin: 4px 2px; /* Some margin */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 25px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  background-image: linear-gradient(to right, #4CAF50, #45a049); /* Gradient background */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
