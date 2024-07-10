@@ -1,0 +1,50 @@
+<!-- I want a card with profile photo and followers and following count -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .profile-card {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        max-width: 300px;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .profile-photo img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body style="background-color: black; color: white">
+    <div class="profile-card" id="profileCard">
+      <div class="profile-photo" id="photo"></div>
+      <div class="followers" id="followers">Followers:</div>
+      <div class="following" id="following">Following:</div>
+    </div>
+  </body>
+  <script>
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        const response = JSON.parse(xhr.responseText);
+        document.querySelector(
+          "#photo"
+        ).innerHTML = `<img src="${response.avatar_url}" alt="Profile Photo">`;
+        document.querySelector("#followers").innerHTML += response.followers;
+        document.querySelector("#following").innerHTML += response.following;
+      } else {
+        console.log("Request failed");
+      }
+    };
+
+    xhr.send();
+  </script>
+</html>
